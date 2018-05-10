@@ -56,8 +56,7 @@ def open_file(f, mode=None, veclen=13):
     elif mode in ('w', 'wb'):
         return HTKFeat_write(f, veclen)
     else:
-        #raise Exception, "mode must be 'r', 'rb', 'w', or 'wb'"
-        raise Exception("mode must be 'r', 'rb', 'w', or 'wb'") # For python 3
+        raise Exception("mode must be 'r', 'rb', 'w', or 'wb'") 
 
 class HTKFeat_read(object):
     "Read HTK format feature files"
@@ -72,8 +71,7 @@ class HTKFeat_read(object):
 
     def open_file(self, filename):
         self.filename = filename
-        #self.fh = file(filename, "rb") # for py2
-        self.fh = open(filename, "rb")  # For py3
+        self.fh = open(filename, "rb")  
         self.readheader()
 
     def readheader(self):
